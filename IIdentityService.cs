@@ -36,8 +36,5 @@ namespace EastFive.Api.Services
         TResult ParseState<TResult>(string state,
             Func<Uri, byte, byte[], TResult> onSuccess,
             Func<string, TResult> invalidState);
-        Task<TResult> CreateOrUpdateClaim<TResult>(Guid accountId, string claimType, string claimValue,
-            Func<TResult> onSuccess,
-            Func<string, TResult> onFailure);
     }
 }
