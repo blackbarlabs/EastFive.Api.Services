@@ -4,16 +4,25 @@ using System.Threading.Tasks;
 
 namespace EastFive.Api.Services
 {
+    public struct SendMessageTemplate
+    {
+        public string externalTemplateId;
+        public string name;
+    }
+
     public interface ISendMessageService
     {
         Task<TResult> SendEmailMessageAsync<TResult>(
+            string templateName,
             string toAddress, string toName,
             string fromAddress, string fromName,
-            string templateName,
+            string subject,
             IDictionary<string, string> substitutionsSingle,
-            IDictionary<string, string[]> substitutionsMultiple,
+            IDictionary<string, IDictionary<string, string>[]> substitutionsMultiple,
             Func<string, TResult> onSuccess,
             Func<TResult> onServiceUnavailable,
             Func<string, TResult> onFailed);
+
+        Task<SendMessageTemplate[]> ListTemplatesAsync();
     }
 }

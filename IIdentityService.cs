@@ -36,5 +36,6 @@ namespace EastFive.Api.Services
         TResult ParseState<TResult>(string state,
             Func<Uri, byte, byte[], TResult> onSuccess,
             Func<string, TResult> invalidState);
+
     }
 }
