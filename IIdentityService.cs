@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -34,7 +35,7 @@ namespace EastFive.Api.Services
         Uri GetLogoutUrl(string redirect_uri, byte mode, byte[] state, Uri responseControllerLocation);
 
         TResult ParseState<TResult>(string state,
-            Func<Uri, byte, byte[], TResult> onSuccess,
+            Func<byte, byte[], IDictionary<string, string>, TResult> onSuccess,
             Func<string, TResult> invalidState);
 
     }
