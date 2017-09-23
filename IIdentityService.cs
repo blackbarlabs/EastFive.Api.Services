@@ -23,6 +23,10 @@ namespace EastFive.Api.Services
             Func<TResult> onNotFound,
             Func<string, TResult> onServiceNotAvailable);
 
+        Task<TResult> GetAllLoginAsync<TResult>(
+            Func<Tuple<Guid, string, bool, bool>[], TResult> onSuccess,
+            Func<string, TResult> onFailure);
+
         Task<TResult> UpdateLoginPasswordAsync<TResult>(Guid loginId, string password, bool forceChange,
             Func<TResult> onSuccess,
             Func<string, TResult> onServiceNotAvailable,
