@@ -19,7 +19,7 @@ namespace EastFive.Api.Services
             Func<string, TResult> onFail);
 
         Task<TResult> GetLoginAsync<TResult>(Guid loginId,
-            Func<string, bool, bool, TResult> onSuccess,
+            Func<string, string, bool, bool, TResult> onSuccess,
             Func<TResult> onNotFound,
             Func<string, TResult> onServiceNotAvailable);
 
