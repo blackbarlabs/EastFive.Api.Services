@@ -43,6 +43,7 @@
     <Compile Include="IIdentityService.cs" />
     <Compile Include="ISendMessageService.cs" />
     <Compile Include="ITimeService.cs" />
+    <Compile Include="MessageServiceExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
